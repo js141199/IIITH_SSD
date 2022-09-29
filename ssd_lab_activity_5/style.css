@@ -1,0 +1,55 @@
+.container {
+    width: max-content;
+    height: max-content;
+    margin: auto;
+    margin-top: 15%;
+    background-color: coral;
+    
+}
+
+input:hover{
+    border-color: red;
+}
+
+table{
+    border: 2px solid red;
+}
+
+tbody,tr,th,td{
+    border: 2px solid black;
+    padding: 5px;
+    width: 50%;
+}
+
+.loginContainer{
+    border: 2px solid green;
+    padding: 30px;
+    border-radius: 25px;
+}
+
+.recordTable {
+    border: 1px solid black;
+}
+
+.thead{
+    background-color: goldenrod;
+}
+
+.studRec{
+    background-color: lightseagreen;
+    margin-top: 12%;
+}
+
+.studContainer{
+    font-family: Arial;
+    text-align: center;
+    border: 3px solid red;
+    padding: 20px;
+    width: max-content;
+    height: max-content;
+    margin: auto;
+    margin-top: 10%;
+    border-radius: 25px;
+}
+
+

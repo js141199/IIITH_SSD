@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Records</title>
+</head>
+<body onload="myCall()" class="studRec">
+    
+    <div class="studContainer">
+
+        <h2> Welcome To Students Records</h2>
+
+        Roll No:&nbsp; <input type="text" placeholder="ROll No." id="rollNo" ><br><br>
+        Student Name:&nbsp; <input type="text" placeholder="Student Name" id="studName"><br><br>
+
+        <button class="addNewButton" onclick="addNewRow();" style="background-color: rgb(21, 182, 21);width: 300px;height: 25px;" >Add New</button>
+
+        <br><br><br>
+
+        <table id="recordsTable" class="recordTable" >
+            <thead class="thead">
+                <tr>
+                    <th>Roll No</th>
+                    <th>Student Name</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <br><br>
+        <button onclick="deleteLastRow()" style="background-color: red;" id="del-btn">Delete Last Entry</button>
+
+    </div>
+
+
+    <script>
+    
+        function myCall(){
+            document.getElementById("recordsTable").style.display = "none";
+            document.getElementById("del-btn").style.display = "none";
+        }
+
+        function addNewRow(){
+            
+            document.getElementById("recordsTable").style.display = "block";
+            document.getElementById("del-btn").style.display = "block";
+            var studentName = document.getElementById("studName").value;
+            var rollNo = document.getElementById("rollNo").value;
+    
+            var myTable = document.getElementById("recordsTable").getElementsByTagName('tbody')[0];
+
+             // Insert a row in the table at row index
+            var newRow   = myTable.insertRow(myTable.rows.length);
+
+            // Insert a cell in the row at index 
+            var rollNoCell  = newRow.insertCell(0);
+            rollNoCell.innerHTML = rollNo;
+
+            var nameCell  = newRow.insertCell(1);
+            nameCell.innerHTML = studentName;    
+    
+            document.getElementById("rollNo").value = "";
+            document.getElementById("studName").value = "";
+        }
+
+        function deleteLastRow(){
+
+            var myTable = document.getElementById("recordsTable");
+            var row = myTable.rows.length;
+
+            if(row > 1){
+
+                myTable.deleteRow(row-1);
+
+                document.getElementById("rollNo").value = "";
+                document.getElementById("studName").value = "";
+                row--;
+                if(row == 1){
+                    document.getElementById("recordsTable").style.display = "none";
+                    document.getElementById("del-btn").style.display = "none";
+                }
+            }
+        }
+    
+    </script>
+
+</body>
+</html>

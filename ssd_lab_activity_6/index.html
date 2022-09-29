@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <script type="text/javascript" src="custom.js"></script>
+</head>
+<body id="bodyDisplay" onload="resetForm()" onkeypress="changeBackgroundColor(this)">
+    
+    <form onsubmit = "return validateMyForm()" id="myForm">
+
+        <div class="manager_name">
+            <label><strong class="labelStyle">Manager Name*:</strong></label>
+            <input class="inputStye" type="text" onblur="validateManagerName()" name="managerName" id="managerName">
+            <span class="error" id="managerNameError" ></span>
+        </div>
+        <br>
+        <div class="email_address">
+            <label for="emailAddress"><strong class="labelStyle">Email Address*:</strong></label>
+            <input class="inputStye" type="text" oninput="validateEmail()" name="emailAddress" id="emailAddress">
+            <span class="error" id="emailError"></span>
+        </div>
+        <br>
+        <div style="width: 100%;" class="username_div">
+            <label for="username"><strong class="labelStyle">Username*:</strong></label>
+            <input class="inputStye" type="text" oninput="validateUsername()" name="username" id="username">
+            <span class="error" id="usernameError"></span>
+        </div>
+        <br>
+        <div style="width: 100%;" class="password_div">
+            <label for="password"><strong class="labelStyle">Password*:</strong></label>
+            <input class="inputStye" type="password" name = "password" id="password">
+            <span class="error" id="passwordError"></span>
+        </div>
+        <br>
+        <div class="confirmPassword_div">
+            <label for="confirmPassword"><strong class="labelStyle">Confirm Password*:</strong></label>
+            <input class="inputStye" type="password" name="confirmPassword" id="confirmPassword" onblur="validatePassword()">
+            <span class="error" id="confirmPasswordError"></span>
+        </div>
+        <br>
+        <div class="teamLead_div">
+            <label for="teamLead"><strong class="labelStyle">Team Lead*:</strong></label>
+            <select class="inputStye" name="teamlead" id="teamLead">
+                <option value="Meet patel">Meet patel</option>
+                <option value="Kim John UN">Kim John UN</option>
+                <option value="Rutvik">Rutvik</option>
+                <option value="Shukan">Shukan</option>
+            </select>
+            <span class="error" id="teamLeadError"></span>
+        </div>
+        <br><br><br>
+        <div class="submit_button">
+            <input class="submitStyle" id="submit-btn" type="submit"  value="Submit">
+        </div>
+        
+    </form>
+
+</body>
+</html>
